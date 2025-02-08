@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_orden_productos_deseados",
+  "info": {
+    "displayName": "Productos Deseados",
+    "description": "Información de productos deseados"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "string",
+      "required": false
+    },
+    "price": {
+      "type": "decimal",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_orden_datos_receptor",
+  "info": {
+    "displayName": "Datos Receptor",
+    "description": "Información de quien recibe el pedido"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "telefono": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

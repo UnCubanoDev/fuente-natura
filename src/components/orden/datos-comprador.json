@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_orden_datos_comprador",
+  "info": {
+    "displayName": "Datos Comprador",
+    "description": "Información opcional de quien compra el pedido"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "direccion": {
+      "type": "text"
+    }
+  }
+}

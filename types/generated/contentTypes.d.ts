@@ -402,6 +402,41 @@ export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCotizacionCotizacion extends Struct.CollectionTypeSchema {
+  collectionName: 'cotizaciones';
+  info: {
+    displayName: 'Cotizaci\u00F3n';
+    pluralName: 'cotizaciones';
+    singularName: 'cotizacion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fecha_creacion: Schema.Attribute.Date &
+      Schema.Attribute.DefaultTo<'Date()'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cotizacion.cotizacion'
+    > &
+      Schema.Attribute.Private;
+    orden: Schema.Attribute.Relation<'oneToOne', 'api::orden.orden'> &
+      Schema.Attribute.Required;
+    pdf_url: Schema.Attribute.String;
+    precio_final: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    productos: Schema.Attribute.JSON & Schema.Attribute.Required;
+    productos_deseados: Schema.Attribute.JSON & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
   collectionName: 'ordens';
   info: {
@@ -997,6 +1032,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::categoria.categoria': ApiCategoriaCategoria;
+      'api::cotizacion.cotizacion': ApiCotizacionCotizacion;
       'api::orden.orden': ApiOrdenOrden;
       'api::producto.producto': ApiProductoProducto;
       'plugin::content-releases.release': PluginContentReleasesRelease;

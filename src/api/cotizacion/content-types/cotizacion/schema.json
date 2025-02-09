@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cotizaciones",
+  "info": {
+    "singularName": "cotizacion",
+    "pluralName": "cotizaciones",
+    "displayName": "Cotización"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "orden": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::orden.orden",
+      "required": true
+    },
+    "productos": {
+      "type": "json",
+      "required": true
+    },
+    "productos_deseados": {
+      "type": "json",
+      "required": true
+    },
+    "precio_final": {
+      "type": "decimal",
+      "required": true
+    },
+    "fecha_creacion": {
+      "type": "date",
+      "default": "Date()"
+    },
+    "pdf_url": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
